@@ -95,8 +95,8 @@ console.log(analyzeColor(randomColor));
  * function to show it to the user.
  */
 
-let userColor = prompt("Enter a color: ");
-alert(analyzeColor(userColor));
+// let userColor = prompt("Enter a color: ");
+// alert(analyzeColor(userColor));
 
 /* ########################################################################## */
 
@@ -120,6 +120,27 @@ alert(analyzeColor(userColor));
  * return value.
  */
 
+const calculateTotal = (lucky, total) => {
+    switch (lucky) {
+        case 0:
+            return `Your total after discount is: $${total}`;
+        case 1:
+            return `Your total after discount is: $${total - (total * .10)}`;
+        case 2:
+            return `Your total after discount is: $${total - (total * .25)}`;
+        case 3:
+            return `Your total after discount is: $${total - (total * .35)}`;
+        case 4:
+            return `Your total after discount is: $${total - (total * .50)}`;
+        case 5:
+            return `You get everything free!`;
+    }
+}
+
+console.log(calculateTotal(0, 100)); // returns 100
+console.log(calculateTotal(4, 100)); // returns 50
+console.log(calculateTotal(5, 100)); // returns 0
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -129,7 +150,10 @@ alert(analyzeColor(userColor));
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
+
+// let userBill = prompt("What is your bill total?");
+// alert(`Your lucky number was: ${luckyNumber}, your total before discount was: ${userBill}, ${calculateTotal(luckyNumber, userBill)}`);
 
 /**
  * TODO:
@@ -149,3 +173,24 @@ alert(analyzeColor(userColor));
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+let userConfirm = confirm("Would you like to enter a number");
+
+if (userConfirm) {
+
+    let userNumber = prompt("Please enter a number");
+
+    if (!isNaN(userNumber)) {
+        let parsedNumber = parseFloat(userNumber);
+
+        let evenOddMessage = (parsedNumber % 2 === 0) ? "Your number is even!" : "Your number is odd!";
+        alert(evenOddMessage);
+
+        alert(`Your number plus 100 is ${parsedNumber + 100}`);
+
+        let positiveNegativeMessage = (parsedNumber >= 0) ? "Your number is positive!" : "Your number is negative!";
+        alert(positiveNegativeMessage);
+    } else {
+        alert("Hey, that's not a number!")
+    }
+}
