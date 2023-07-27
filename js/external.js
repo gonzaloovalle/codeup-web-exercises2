@@ -66,6 +66,8 @@ let itemsBought = prompt("How many items have you bought?");
 
 let premiumMember = confirm("Are you a premium member?");
 
-let discountCheck = (itemsBought > 2) && premiumMember;
+let offerNotExpired = confirm("Is the offer still valid?");
+
+let discountCheck = (itemsBought > 2) || premiumMember && offerNotExpired;
 
 alert(`Eligible for discount: ${discountCheck}`);
