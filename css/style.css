@@ -1,4 +1,40 @@
 .fancy-header {
     color: purple;
     text-decoration: underline;
+    text-align: center;
+}
+
+.header {
+    color: blue;
+    text-decoration: underline;
+}
+
+body {
+    background-color: goldenrod;
+    /*background-image: url("/img/babel_fish.webp");*/
+}
+
+ul {
+    list-style: georgian;
+}
+
+.font {
+    font-family: Chalkduster, serif;
+}
+
+td {
+    padding: 1.5em;
+    font-size: 2.5em;
+}
+tr {
+    padding: 1.5em;
+    font-size: 2.5em;
+}
+
+a:link {
+    color: aqua;
+}
+
+a:visited {
+    color: chartreuse;
 }
