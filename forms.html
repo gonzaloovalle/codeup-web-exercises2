@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register With Us</title>
+</head>
+<body>
+    <form method="POST" action="https://request-inspector.glitch.me/">
+        <label for="email">Email:</label>
+            <input type="text" id="email" name="email" placeholder="email">
+        <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="password">
+        <label for="bio">Bio:</label>
+            <textarea id="bio" name="bio"></textarea>
+        <h2>How did you hear about us?</h2>
+        Billboard <label for="billboard">
+            <input type="radio" id="billboard" name="options" value="billboard">
+        </label>
+        <br>
+        Radio Advertisement <label for="radio_advertisement">
+            <input type="radio" id="radio_advertisement" name="options" value="radio_advertisement">
+        </label>
+        <br>
+        Internet Advertisement <label for="internet_advertisement">
+            <input type="radio" id="internet_advertisement" name="options" value="internet_advertisement">
+        </label>
+        <br>
+        Other <label for="other">
+            <input type="radio" id="other" name="options" value="other">
+        </label>
+        <br>
+        <h2>How did you hear about us?</h2>
+        Billboard <label for="billboard_box">
+        <input type="checkbox" id="billboard_box" name="options_box" value="billboard">
+        </label>
+        <br>
+        Radio Advertisement <label for="radio_advertisement_box">
+        <input type="checkbox" id="radio_advertisement_box" name="options_box" value="radio_advertisement">
+        </label>
+        <br>
+        Internet Advertisement <label for="internet_advertisement">
+        <input type="checkbox" id="internet_advertisement_box" name="options_box" value="internet_advertisement">
+        </label>
+        <br>
+        Other <label for="other_box">
+        <input type="checkbox" id="other_box" name="options_box" value="other">
+        </label>
+        <br>
+        <br>
+        <label for="browsers">What web browser do you use?
+            <select id="browsers" name="browsers">
+                <option value="safari">Safari</option>
+                <option value="chrome">Google Chrome</option>
+                <option value="firefox">Mozilla Firefox</option>
+            </select>
+        </label>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
