@@ -174,23 +174,28 @@ var luckyNumber = Math.floor(Math.random() * 6);
  * HINT: The way we prompt for a value could be improved
  */
 
-let userConfirm = confirm("Would you like to enter a number");
+function numberInfo() {
 
-if (userConfirm) {
+    let userConfirm = confirm("Would you like to enter a number");
 
-    let userNumber = prompt("Please enter a number");
+    if (userConfirm) {
 
-    if (!isNaN(userNumber)) {
-        let parsedNumber = parseFloat(userNumber);
+        let userNumber = prompt("Please enter a number");
 
-        let evenOddMessage = (parsedNumber % 2 === 0) ? "Your number is even!" : "Your number is odd!";
-        alert(evenOddMessage);
+        if (!isNaN(userNumber)) {
+            let parsedNumber = parseFloat(userNumber);
 
-        alert(`Your number plus 100 is ${parsedNumber + 100}`);
+            let evenOddMessage = (parsedNumber % 2 === 0) ? "Your number is even!" : "Your number is odd!";
+            alert(evenOddMessage);
 
-        let positiveNegativeMessage = (parsedNumber >= 0) ? "Your number is positive!" : "Your number is negative!";
-        alert(positiveNegativeMessage);
-    } else {
-        alert("Hey, that's not a number!")
+            alert(`Your number plus 100 is ${parsedNumber + 100}`);
+
+            let positiveNegativeMessage = (parsedNumber >= 0) ? "Your number is positive!" : "Your number is negative!";
+            alert(positiveNegativeMessage);
+        } else {
+            alert("Hey, that's not a number!")
+        }
     }
 }
+
+numberInfo();
