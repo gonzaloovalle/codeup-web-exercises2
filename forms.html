@@ -5,7 +5,7 @@
     <title>Register With Us</title>
 </head>
 <body>
-    <form method="POST" action="https://request-inspector.glitch.me/">
+    <form method="GET" action="https://request-inspector.glitch.me/">
         <label for="email">Email:</label>
             <input type="text" id="email" name="email" placeholder="email">
         <label for="password">Password:</label>
@@ -54,7 +54,13 @@
                 <option value="firefox">Mozilla Firefox</option>
             </select>
         </label>
-        <button type="submit">Submit</button>
+        <br>
+        <br>
+        <label for="submit_verify">Do you want to submit?
+            <input type="checkbox" id="submit_verify" name="submit_verify">
+        </label>
+        <button type="submit" id="submit" disabled>Submit</button>
     </form>
+    <script src="js/forms.js"></script>
 </body>
 </html>
