@@ -1,0 +1,22 @@
+.test {
+  display: inline-block;
+  color: chartreuse;
+  background: red;
+  width: 100%;
+  text-align: center;
+  .another-test {
+    display: inline-block;
+    color: red;
+    background: purple;
+    width: 100%;
+    text-align: center;
+    .another-other-test {
+      display: inline-block;
+      color: purple;
+      background: chartreuse;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+}
