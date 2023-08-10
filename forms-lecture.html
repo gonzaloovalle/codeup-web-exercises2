@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+</head>
+<body>
+    <form method="GET" action="https://request-inspector.glitch.me">
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text">
+
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password">
+
+      <input type="submit">
+    </form>
+
+    <br>
+
+    <form action="https://request-inspector.glitch.me">
+      <label for="zipcode">Zipcode</label>
+      <input id="zipcode" name="zipcode" type="text" placeholder="input a zipcode">
+      <label for="comment">Comment</label>
+      <textarea id="comment" name="example"></textarea>
+      <button type="submit">Search</button>
+    </form>
+    <br>
+
+    <form method="POST" action="https://request-inspector.glitch.me">
+      <h2>Which of these sci-fi shows have you watched?</h2>
+      <label for="star_trek">
+        <input id="star_trek" name="star_trek" type="checkbox" value="star_trek" checked>
+        Star Trek
+      </label>
+      <br>
+      <label for="stargate">
+        <input id="stargate" name="stargate" type="checkbox" value="stargate">
+        Startgate SG-1
+      </label>
+      <br>
+      <label for="dr_who">
+        <input id="dr_who" name="dr_who" type="checkbox">
+        Doctor Who
+      </label>
+      <br>
+      <label for="red_dwarf">
+        <input id="red_dwarf" name="red_dwarf" type="checkbox" value="red_dwarf">
+        Red Dwarf
+      </label>
+      <br>
+      <label for="none">
+        <input id="none" name="none" type="checkbox" value="none">
+        None
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+    <br>
+    <h2>What is the correct answer?</h2>
+    <form action="https://request-inspector.glitch.me">
+      <label for="a">
+        A<input type="radio" id="a" name="quiz_question_2">
+      </label>
+      <br>
+      <label for="b">
+        B<input type="radio" id="b" name="quiz_question_1">
+      </label>
+      <br>
+      <label for="c">
+        C<input type="radio" id="c" name="quiz_question_2">
+      </label>
+      <br>
+      <label for="d">
+        D<input type="radio" id="d" name="quiz_question_1">
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
