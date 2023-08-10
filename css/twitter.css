@@ -127,3 +127,12 @@ a {
 .media-body {
     width: calc(100% - 50px);
 }
+
+.profile-items {
+    list-style: none;
+    padding: 0;
+}
+
+.profile-entry {
+    margin: .5em;
+}
