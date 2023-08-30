@@ -7,6 +7,7 @@
 <body>
 
 <h1 id="main-header">Hello World!</h1>
+<button id="main-header-button">Click me!</button>
 <ul>
     <li data-dbid="1">Item 1</li>
     <li data-dbid="2">Item 2</li>
@@ -14,7 +15,9 @@
     <li data-dbid="4">Item 4</li>
     <li data-dbid="5">Item 5</li>
 </ul>
+<button id="list-button">Click me!</button>
 <h2 id="sub-header">Hello Again.</h2>
+<button id="sub-header-button">Click me!</button>
 <p class="sub-paragraph">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -24,6 +27,7 @@
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
+<button id="sub-paragraph-button">Click me!</button>
 
 <script>
     (function() {
@@ -31,34 +35,48 @@
         // TODO: Uncomment next line and get the main header element by id
         var mainHeader = document.querySelector('#main-header');
 
+        let mainHeaderButton = document.getElementById('main-header-button');
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = "JavaScript is Cool"
+        mainHeaderButton.addEventListener("click", () => {
+            mainHeader.innerHTML = "JavaScript is Cool"
+        });
+
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.getElementById("sub-header");
 
+        let subHeaderButton = document.getElementById('sub-header-button');
         // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = "blue"
+        subHeaderButton.addEventListener("click", () => {
+            subHeader.style.color = "blue"
+        });
         // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName("li");
-        console.log("Hello")
 
+        let listButton = document.getElementById('list-button');
         // TODO: Set text color on every other list item to grey
         // TODO: Set text color of li with dbid = 1 to blue
-        for (let i = 0; i <= listItems.length - 1; i++) {
+        listButton.addEventListener("click", () => {
+            for (let i = 0; i <= listItems.length - 1; i++) {
 
-            if (parseFloat(listItems[i].getAttribute("data-dbid")) === 1) {
-                listItems[i].style.color = "blue"
-            }
+                if (parseFloat(listItems[i].getAttribute("data-dbid")) === 1) {
+                    listItems[i].style.color = "blue"
+                }
 
-            if (i % 2 !== 0) {
-                listItems[i].style.color = "grey";
+                if (i % 2 !== 0) {
+                    listItems[i].style.color = "grey";
+                }
             }
-        }
+        });
+
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName("sub-paragraph");
 
+        let subParagraphButton = document.getElementById('sub-paragraph-button');
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerText = "Fission Mailed!"
+        subParagraphButton.addEventListener("click", () => {
+            subParagraphs[0].innerText = "Fission Mailed!"
+        });
+
     })();
 </script>
 </body>
