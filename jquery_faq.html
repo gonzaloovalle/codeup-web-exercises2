@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jQuery FAQ</title>
+    <style>
+        .invisible {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+
+<h1>American Cryptids:</h1>
+
+<dl>
+    <dt>Mothman</dt>
+    <dd class="invisible">A winged humanoid with glowing red eyes, often associated with disaster sightings in West Virginia.</dd>
+
+    <dt>Champ</dt>
+    <dd class="invisible">A lake monster said to inhabit Lake Champlain, straddling New York and Vermont.</dd>
+
+    <dt>Jersey Devil</dt>
+    <dd class="invisible">A winged, hooved creature with a goat-like head, said to roam the Pine Barrens of New Jersey.</dd>
+
+    <dt>Bigfoot</dt>
+    <dd class="invisible">A large, ape-like creature said to inhabit forests, particularly in the Pacific Northwest.</dd>
+
+    <dt>Chupacabra</dt>
+    <dd class="invisible">A blood-sucking creature, often described as reptilian, reported in various parts of the Americas.</dd>
+
+    <dt>Thunderbird</dt>
+    <dd class="invisible">A giant bird often associated with Native American folklore, said to create thunder with its wings.</dd>
+
+    <dt>Fouke Monster</dt>
+    <dd class="invisible">A large, ape-like creature reported in the swamps near Fouke, Arkansas.</dd>
+
+    <dt>Dover Demon</dt>
+    <dd class="invisible">A small, goblin-like creature with bright orange eyes, sighted in Dover, Massachusetts.</dd>
+
+    <dt>Loveland Frogman</dt>
+    <dd class="invisible">A humanoid amphibian reported in Loveland, Ohio, known for its webbed hands and feet.</dd>
+
+    <dt>Flatwoods Monster</dt>
+    <dd class="invisible">A tall, humanoid creature with a spade-shaped head, spotted in Flatwoods, West Virginia.</dd>
+</dl>
+
+<button id="toggle">Show</button>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
+    $("#toggle").on("click", () => {
+        if ($("#toggle").html() === "Show") {
+            $("#toggle").html("Hide")
+        } else if ($("#toggle").html() === "Hide") {
+            $("#toggle").html("Show")
+        }
+
+        $("dd").toggleClass("invisible")
+    });
+
+    $("dt").on("click", () => {
+        console.log("Hello")
+        $(this).css("background-color", "yellow");
+    });
+</script>
+
+</body>
+</html>
