@@ -48,6 +48,8 @@
     <dd class="invisible">A tall, humanoid creature with a spade-shaped head, spotted in Flatwoods, West Virginia.</dd>
 </dl>
 
+
+
 <button id="toggle">Show</button>
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -62,8 +64,7 @@
         $("dd").toggleClass("invisible")
     });
 
-    $("dt").on("click", () => {
-        console.log("Hello")
+    $("dt").on("click", function() {
         $(this).css("background-color", "yellow");
     });
 </script>
