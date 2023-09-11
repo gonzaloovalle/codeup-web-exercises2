@@ -10,6 +10,34 @@
         .invisible {
             visibility: hidden;
         }
+
+        .frame {
+            width: 300px;
+            height: 300px;
+            border: 2px solid black;
+            margin: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .swap-btn {
+            margin-top: 10px;
+        }
+
+        #paintings {
+            display: flex;
+        }
+
+        .highlight {
+            background-color: yellow;
+        }
+
     </style>
 </head>
 <body>
@@ -48,9 +76,50 @@
     <dd class="invisible">A tall, humanoid creature with a spade-shaped head, spotted in Flatwoods, West Virginia.</dd>
 </dl>
 
-
-
 <button id="toggle">Show</button>
+
+    <h3>Bigfoot</h3>
+    <ul>
+        <li>Also known as Sasquatch</li>
+        <li>Reported to be a large, hairy, muscular, bipedal ape-like creature</li>
+        <li>Primarily sighted in the forests of the Pacific Northwest region of North America</li>
+        <li>Many consider it to be a combination of folklore, misidentification, and hoax</li>
+    </ul>
+
+    <h3>Loch Ness Monster</h3>
+    <ul>
+        <li>Often referred to as Nessie</li>
+        <li>Reported to be a large creature living in Loch Ness in the Scottish Highlands</li>
+        <li>Mostly considered to be a myth or legend</li>
+        <li>First modern sighting occurred in 1933</li>
+    </ul>
+
+    <h3>Chupacabra</h3>
+    <ul>
+        <li>Name comes from the Spanish words "chupar" (to suck) and "cabra" (goat)</li>
+        <li>Reported sightings primarily in Puerto Rico and other parts of the Americas</li>
+        <li>Described as a heavy creature, the size of a small bear, with a row of spines down its back</li>
+        <li>First reported sighting was in 1995</li>
+    </ul>
+
+
+<button id="highlighter">Highlight</button>
+
+<div id="paintings">
+    <div class="frame" id="frame1">
+        <img src="img/starry-night.jpeg" alt="Frame 1">
+        <button class="swap-btn">Swap Image</button>
+    </div>
+    <div class="frame" id="frame2">
+        <img src="img/haystacks-in-provence.jpg" alt="Frame 2">
+        <button class="swap-btn">Swap Image</button>
+    </div>
+    <div class="frame" id="frame3">
+        <img src="img/cafe-terrace-at-night.jpg" alt="Frame 3">
+        <button class="swap-btn">Swap Image</button>
+    </div>
+</div>
+
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script>
@@ -67,6 +136,54 @@
     $("dt").on("click", function() {
         $(this).css("background-color", "yellow");
     });
+
+    $("#highlighter").on("click", function() {
+        $("ul").each(function() {
+            $(this).children().last().toggleClass("highlight")
+        })
+    });
+
+    $("h3").on("click", function() {
+        $(this).next().children().css("font-weight", "bold");
+    });
+
+    $("li").on("click", function() {
+        $(this).parent().children().first().css("color", "blue");
+    });
+
+    $('.swap-btn').on('click', function() {
+        let currentFrame = $(this).parent();
+        let currentImage = currentFrame.find('img');
+        let currentImageSrc = currentImage.attr('src');
+
+        if (currentFrame.attr('id') === 'frame1') {
+            let centerFrame = $('#frame2');
+            let centerImage = centerFrame.find('img');
+            let centerImageSrc = centerImage.attr('src');
+
+            // Swap the images
+            currentImage.attr('src', centerImageSrc);
+            centerImage.attr('src', currentImageSrc);
+        } else if (currentFrame.attr('id') === 'frame2') {
+            let randomFrameId = Math.random() < 0.5 ? '#frame1' : '#frame3';
+            let randomFrame = $(randomFrameId);
+            let randomImage = randomFrame.find('img');
+            let randomImageSrc = randomImage.attr('src');
+
+            // Swap the images
+            currentImage.attr('src', randomImageSrc);
+            randomImage.attr('src', currentImageSrc);
+        } else if (currentFrame.attr('id') === 'frame3') {
+            let centerFrame = $('#frame2');
+            let centerImage = centerFrame.find('img');
+            let centerImageSrc = centerImage.attr('src');
+
+            // Swap the images
+            currentImage.attr('src', centerImageSrc);
+            centerImage.attr('src', currentImageSrc);
+        }
+    });
+
 </script>
 
 </body>
