@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox Exercise</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        .restaurant-image {
+            width: 100%;
+            hieght: 100%;
+        }
+        .invisible {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<label for="map_zoom">Zoom Level</label>
+<select id="map_zoom" name="map_zoom">
+    <option value="5">5</option>
+    <option value="10">10</option>
+    <option value="15">15</option>
+    <option value="20">20</option>
+</select>
+<input id="search" type="text" placeholder="Location">
+<button id="hide_markers">Hide</button>
+<div id='map' style='width: 100%; height: 100vh;'></div>
+
+
+
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geocoder-utils.js"></script>
+<script src="js/mapbox_maps_api.js"></script>
+
+</body>
+</html>
